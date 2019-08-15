@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Button, Form } from 'semantic-ui-react'
 
-const Form = (props) => {
+const MemberForm = (props) => {
     const [member, setMember] = useState({name: "", email: "", role: ""})
     
     const handleChange = (event) => {
@@ -17,19 +18,25 @@ const Form = (props) => {
     
     return (
         <div>
-            <form onSubmit={event => handleSubmit(event)}>
+            <Form onSubmit={event => handleSubmit(event)}>
                 <fieldset>
+                    <Form.Field>
                     <label>Name: </label>
                     <input type="text" name="name" value={member.name} placeholder="Name" onChange={handleChange} /><br />
+                    </Form.Field>
+                    <Form.Field>
                     <label>Email: </label>
                     <input type="text" name="email" value={member.email} placeholder="Email" onChange={handleChange} /><br />
+                    </Form.Field>
+                    <Form.Field>
                     <label>Role: </label>
                     <input type="text" name="role" value={member.role} placeholder="Role" onChange={handleChange} /><br />
-                    <button>Submit</button>
+                    </Form.Field>
+                    <Button>Submit</Button>
                 </fieldset>
-            </form>
+            </Form>
         </div>
     )
 }
 
-export default Form;
+export default MemberForm;

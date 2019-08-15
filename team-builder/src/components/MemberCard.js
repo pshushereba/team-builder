@@ -1,12 +1,19 @@
 import React from 'react'
+import { Card, Container } from 'semantic-ui-react'
 
 const MemberCard = (props) => {
     return (
-        <div>
-            <h1>Name: {props.name} </h1>
-            <p>Email: {props.email} </p>
-            <p>Role: {props.role} </p>
-        </div>
+        <>
+            <Container>
+                <Card>
+                    <Card.Content>
+                        <Card.Header>{props.name}</Card.Header>
+                        <Card.Meta>{props.email}</Card.Meta>
+                        <Card.Description>{props.role}</Card.Description>
+                    </Card.Content>
+                </Card>
+            </Container>
+        </>
     )
 }
 
