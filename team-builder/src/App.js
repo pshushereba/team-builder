@@ -3,16 +3,21 @@ import './App.css';
 
 import Form from './components/Form.js';
 import Member from './components/Member.js';
-import { team } from './data.js';
 
 function App() {
   
-  const [member, setMember] = useState({});
-  
+  const [teamList, setTeamList] = useState([]);
+
+  const updateMember = (props) => {
+    setTeamList([...teamList, props]);
+  }
+
+  console.log(teamList); 
+
   return (
     <div className="App">
-      <Form />
-      <Member info={team} setMember={setMember} />
+      <Form updateMember={updateMember} />
+      <Member info={teamList}  />
     </div>
   );
 }
